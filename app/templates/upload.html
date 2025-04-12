@@ -1,0 +1,207 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>📤 Upload Your Blog or Vlog</h2>
+
+        <!-- Form for file upload -->
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <!-- Radio buttons to select whether it's a Blog or Vlog -->
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="upload_type" value="blog" checked> Blog
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="upload_type" value="vlog"> Vlog
+                </label>
+            </div>
+            <br>
+
+            <!-- Blog file upload section -->
+            <div id="blog-upload" style="display:block;">
+                <div class="form-group">
+                    <label>Upload Blog (.txt, .pdf, etc.):</label><br>
+                    <input class="form-control" type="file" name="blog_file"><br><br>
+                </div>
+            </div>
+
+            <!-- Vlog upload section -->
+            <div id="vlog-upload" style="display:none;">
+                <div class="form-group">
+                    <label>Vlog Title:</label><br>
+                    <input class="form-control" type="text" name="vlog_title" placeholder="Enter a short title for your vlog"><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>OR Paste Vlog URL (YouTube or similar):</label><br>
+                    <input class="form-control" type="text" name="vlog_url" placeholder="https://..."><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Vlog Video:</label><br>
+                    <input class="form-control" type="file" name="vlog_file"><br><br>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Upload">
+            </div>
+        </form>
+
+        <br>
+        <!-- Link to navigate back to the dashboard -->
+        <a href="{{ url_for('main.dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <script>
+        // Toggle the visibility of blog and vlog upload sections based on radio button selection
+        const blogRadio = document.querySelector('input[value="blog"]');
+        const vlogRadio = document.querySelector('input[value="vlog"]');
+        const blogUpload = document.getElementById('blog-upload');
+        const vlogUpload = document.getElementById('vlog-upload');
+
+        blogRadio.addEventListener('change', function() {
+            if (this.checked) {
+                blogUpload.style.display = 'block';
+                vlogUpload.style.display = 'none';
+            }
+        });
+
+        vlogRadio.addEventListener('change', function() {
+            if (this.checked) {
+                blogUpload.style.display = 'none';
+                vlogUpload.style.display = 'block';
+            }
+        });
+
+        // Initialize the form with the correct display state
+        if (blogRadio.checked) {
+            blogUpload.style.display = 'block';
+            vlogUpload.style.display = 'none';
+        } else {
+            blogUpload.style.display = 'none';
+            vlogUpload.style.display = 'block';
+        }
+    </script>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>📤 Upload Your Blog or Vlog</h2>
+
+        <!-- Form for file upload -->
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <!-- Radio buttons to select whether it's a Blog or Vlog -->
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="upload_type" value="blog" checked> Blog
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="upload_type" value="vlog"> Vlog
+                </label>
+            </div>
+            <br>
+
+            <!-- Blog file upload section -->
+            <div id="blog-upload" style="display:block;">
+                <div class="form-group">
+                    <label>Upload Blog (.txt, .pdf, etc.):</label><br>
+                    <input class="form-control" type="file" name="blog_file"><br><br>
+                </div>
+            </div>
+
+            <!-- Vlog upload section -->
+            <div id="vlog-upload" style="display:none;">
+                <div class="form-group">
+                    <label>Vlog Title:</label><br>
+                    <input class="form-control" type="text" name="vlog_title" placeholder="Enter a short title for your vlog"><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>OR Paste Vlog URL (YouTube or similar):</label><br>
+                    <input class="form-control" type="text" name="vlog_url" placeholder="https://..."><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Vlog Video:</label><br>
+                    <input class="form-control" type="file" name="vlog_file"><br><br>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Upload">
+            </div>
+        </form>
+
+        <br>
+        <!-- Link to navigate back to the dashboard -->
+        <a href="{{ url_for('main.dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <script>
+        // Toggle the visibility of blog and vlog upload sections based on radio button selection
+        const blogRadio = document.querySelector('input[value="blog"]');
+        const vlogRadio = document.querySelector('input[value="vlog"]');
+        const blogUpload = document.getElementById('blog-upload');
+        const vlogUpload = document.getElementById('vlog-upload');
+
+        blogRadio.addEventListener('change', function() {
+            if (this.checked) {
+                blogUpload.style.display = 'block';
+                vlogUpload.style.display = 'none';
+            }
+        });
+
+        vlogRadio.addEventListener('change', function() {
+            if (this.checked) {
+                blogUpload.style.display = 'none';
+                vlogUpload.style.display = 'block';
+            }
+        });
+
+        // Initialize the form with the correct display state
+        if (blogRadio.checked) {
+            blogUpload.style.display = 'block';
+            vlogUpload.style.display = 'none';
+        } else {
+            blogUpload.style.display = 'none';
+            vlogUpload.style.display = 'block';
+        }
+    </script>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+>>>>>>> beb1998 (Intial commit)

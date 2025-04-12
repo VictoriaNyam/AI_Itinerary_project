@@ -425,4 +425,4 @@ def logout():
     logout_user()  # Log out the current user
     flash("You have been logged out.", "info")
     return redirect(url_for('main.home'))  # Redirect to the homepage after logout
->>>>>>> beb1998 (Intial commit)
+

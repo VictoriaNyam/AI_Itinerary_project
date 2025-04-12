@@ -45,4 +45,3 @@ def create_app():
 
 # Create the app instance
 app = create_app()
->>>>>>> beb1998 (Intial commit)

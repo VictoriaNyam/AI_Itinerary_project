@@ -117,4 +117,4 @@ class Comment(db.Model):
     def __repr__(self):
         # String representation of the Comment object
         return f'<Comment {self.id}>'
->>>>>>> beb1998 (Intial commit)
+

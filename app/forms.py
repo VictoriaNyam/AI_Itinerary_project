@@ -31,4 +31,4 @@ class LoginForm(FlaskForm):
 # Placeholder for file upload form (can be extended with fields later)
 class UploadForm(FlaskForm):
     pass
->>>>>>> beb1998 (Intial commit)
+

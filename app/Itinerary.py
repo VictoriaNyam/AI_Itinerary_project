@@ -152,4 +152,4 @@ def generate_itineraries(representative_pois, selected_activities, days):
     db.session.commit()
 
     return itineraries
->>>>>>> beb1998 (Intial commit)
+
